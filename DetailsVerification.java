@@ -45,6 +45,7 @@ public class DetailsVerification {
 				val=0;
 				return false;
 			}
+
 			if(!(t.contains(name.substring(i,i+1)))) {
 				t+=name.charAt(i);
 			}
@@ -114,8 +115,9 @@ public class DetailsVerification {
 		
 		int yy=Integer.parseInt(s[2]);
 
-		if((year-yy)<18 && (year-yy)>60) {
+		if((year-yy)<18 || (year-yy)>60) {
 			val=0;
+			System.out.println("Your Age is not Eligible");
 			return false;
 		}
 		//returning
@@ -172,9 +174,13 @@ public class DetailsVerification {
 			
 			
 			int yy=Integer.parseInt(s[2]);
-
-			if((year-yy)<18 && (year-yy)>60) {
+			
+			if((year-yy>=0 && year-yy<=18)) {
+				val=1;
+			}
+			else {
 				val=0;
+				System.out.println("Your Joining date is not Eligible");
 				return false;
 			}
 			//returning
@@ -194,7 +200,7 @@ public class DetailsVerification {
 		int count = 0;
 		boolean flag=false;
 		while(!flag) {
-			if(count>=3) {
+			if(count>3) {
 				System.out.println("your are Wrong");
 				break;
 			}
@@ -220,7 +226,7 @@ public class DetailsVerification {
 		flag=false;
 		count=0;
 		while(!flag) {
-			if(count>=3) {
+			if(count>3) {
 				System.out.println("your are Wrong");
 				break;
 			}
@@ -245,7 +251,7 @@ public class DetailsVerification {
 		flag=false;
 		count=0;
 		while(!flag) {
-			if(count>=3) {
+			if(count>3) {
 				System.out.println("your are Wrong");
 				break;
 			}
@@ -270,7 +276,7 @@ public class DetailsVerification {
 		flag=false;
 		count=0;
 		while(!flag) {
-			if(count>=3) {
+			if(count>3) {
 				System.out.println("your are Wrong");
 				break;
 			}
@@ -298,3 +304,4 @@ public class DetailsVerification {
 
 }
 }
+
